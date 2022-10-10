@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Program surface - Touch your dreams" />
+    <meta
+      property="og:description"
+      content="Our motive is to aware students of their carrier in IT and makes them ready for the industry. Experts will guide you and help you to get rid of problems."
+    />
+    <meta property="og:image" content="/img/program surface logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:url" content="http://programsurface.herokuapp.com/" />
+
+    <link rel="apple-touch-icon" href="/img/program surface logo.png" />
+    <link
+      rel="shortcut icon"
+      href="/img/program surface logo.png"
+      type="image/x-icon"
+    />
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/index.style.css" />
+    <link rel="stylesheet" href="/css/roadmap.style.css" />
+    <link rel="stylesheet" href="/css/dashboard.style.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-5 col-7">
+              <div class="logo">
+                <a href="/">
+                  <img src="/img/programSurface-logo-withName.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-7 col-5 nav">
+              <div class="desktop-menu">
+                <nav>
+                  <ul>
+                    <% if (loggedInUser && loggedInUser.username) { %>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/roadmaps">Roadmaps</a></li>
+
+                    <% if (loggedInUser.role === "user") { %>
+                    <li><a href="/registration">Registration</a></li>
+                    <% } %>
+
+                    <li><a href="/about">About us</a></li>
+
+                    <% if (loggedInUser.role === "co-founder" ||
+                    loggedInUser.role === "admin" || loggedInUser.role ===
+                    "instructor") { %>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <% } %> <% if (loggedInUser.role === "user" ||
+                    loggedInUser.role === "student") { %>
+                    <li>
+                      <a href="/u/<%= loggedInUser.username %>">My profile</a>
+                    </li>
+                    <% } %>
+
+                    <li><a href="#" onclick="logout()">Logout</a></li>
+
+                    <% } else{ %>
+
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/roadmaps">Roadmaps</a></li>
+                    <li><a href="/registration">Registration</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/signup">Signup</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <% } %>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="mobile-menu">
+                <div id="nav">
+                  <div class="menu-icon">
+                    <i class="fa-solid fa-bars" id="bars"></i>
+                    <i class="fa-solid fa-xmark" id="X"></i>
+                  </div>
+                  <ul id="m-nav">
+                    <% if (loggedInUser && loggedInUser.username) { %>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/roadmaps">Roadmaps</a></li>
+
+                    <% if (loggedInUser.role === "user") { %>
+                    <li><a href="/registration">Registration</a></li>
+                    <% } %>
+
+                    <li><a href="/about">About us</a></li>
+
+                    <% if (loggedInUser.role === "co-founder" ||
+                    loggedInUser.role === "admin" || loggedInUser.role ===
+                    "instructor") { %>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <% } %> <% if (loggedInUser.role === "user" ||
+                    loggedInUser.role === "student") { %>
+                    <li>
+                      <a href="/u/<%= loggedInUser.username %>">My profile</a>
+                    </li>
+                    <% } %>
+
+                    <li><a href="#" onclick="logout()">Logout</a></li>
+
+                    <% } else{ %>
+
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/roadmaps">Roadmaps</a></li>
+                    <li><a href="/registration">Registration</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/signup">Signup</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <marquee class="notice"
+          >Registration will start from 10/10/2022.
+        </marquee> -->
+      </div>
+    </div>
+
+    <script>
+      function logout() {
+        fetch("/", {
+          method: "DELETE",
+        });
+        setTimeout(() => {
+          window.location.replace("/");
+        }, 2000);
+      }
+    </script>
+    <script src="/js/custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<div class="dashboard-allstudents">
+  <div class="all-users">
+    <p class="dash-sect-heading">All Students</p>
+    <p style="text-align: right">Total Students - <%= students.length %></p>
+    <% students.map((student)=>{ %>
+    <div class="user">
+      <div class="dash-user-info">
+        <div class="row">
+          <div class="col-2">
+            <div class="desh-user-icon">
+              <% if(student.avatar) { %>
+              <img src="/uploads/avatar/<%= student.avatar %>" alt="" />
+              <% } else{ %>
+              <img src="/uploads/avatar/user-icon.png" alt="" />
+              <% } %>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5">
+            <div class="desh-user-name">
+              <p><%= student.name %> <span> - <%= student.program %></span></p>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5">
+            <div class="desh-user-email">
+              <p>
+                <%= student.email %>
+                <span
+                  ><i class="fa-solid fa-angle-right" id="right-arrow"></i
+                ></span>
+                <span
+                  ><i class="fa-solid fa-angle-down" id="down-arrow"></i
+                ></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-user-details">
+        <hr />
+        <ul>
+          <li>
+            <p>Program - <%= student.program %></p>
+          </li>
+          <li>
+            <p>Username - <%= student.username %></p>
+          </li>
+
+          <li>
+            <p>Batch - <%= student.student.batch %></p>
+          </li>
+          <li>
+            <p>Student Id - <%= student.student.sId %></p>
+          </li>
+          <li>
+            <p>Department - <%= student.student.department %></p>
+          </li>
+          <li>
+            <p>Semester - <%= student.student.semester %></p>
+          </li>
+          <li>
+            <p>Session - <%= student.student.session %></p>
+          </li>
+          <li>
+            <p>Gender - <%= student.student.gender %></p>
+          </li>
+          <li>
+            <p>Mobile - <%= student.student.mobile %></p>
+          </li>
+          <li>
+            <p>Email - <%= student.email %></p>
+          </li>
+
+          <div class="dash-u-update-btn">
+            <span class="dash-u-cancle"><a href="#">Cancel</a></span>
+            <span class="dash-u-update"><a href="#">Update</a></span>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<script>
+  var deshUserInfo = document.querySelectorAll(".dash-user-info");
+  var deshUserDetails = document.querySelectorAll(".dash-user-details");
+  var rightArrow = document.querySelectorAll("#right-arrow");
+  var downArrow = document.querySelectorAll("#down-arrow");
+
+  for (let i = 0; i < deshUserInfo.length; i++) {
+    let count = 0;
+
+    deshUserInfo[i].addEventListener("click", function () {
+      deshUserDetails[i].style.display = "block";
+      rightArrow[i].style.display = "none";
+      downArrow[i].style.display = "block";
+      count++;
+
+      if (count % 2 == 0) {
+        deshUserDetails[i].style.display = "none";
+        rightArrow[i].style.display = "block";
+        downArrow[i].style.display = "none";
+      }
+    });
+  }
+</script>

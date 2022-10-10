@@ -1,0 +1,31 @@
+<%- include("./layouts/header.ejs"); %>
+<div class="resources-page">
+  <div class="container">
+    <div class="page-title">
+      <h2>Resources</h2>
+    </div>
+    <div class="resources">
+      <div class="row">
+        <% let count = 1; %> <% resources.map((resource)=>{ %>
+        <div class="col-md-6">
+          <div
+            class="resource"
+            style="background-color: aliceblue; margin-bottom: 30px"
+          >
+            <h3><%= count++ %>. <%= resource.title %></h3>
+            <p><%= resource.desc %></p>
+
+            <p class="resource-type">Type: <%= resource.type %></p>
+            <p class="resource-cat">Catagory: <%= resource.sector %></p>
+            <br />
+            <a href="<%= resource.link %>" target="_blank">Resource link</a>
+            <hr />
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("./layouts/footer.ejs"); %>

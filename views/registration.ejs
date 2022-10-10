@@ -1,0 +1,131 @@
+<%- include("./layouts/header.ejs"); %>
+
+<div class="page-title">
+  <h2>Registration</h2>
+</div>
+<% if(role ==="user"){ %>
+<main>
+  <div class="container">
+    <div class="row">
+      <form action="/registration" method="post">
+        <div class="batch-f f-item">
+          <label for="batch">Batch:</label>
+          <input type="number" name="batch" id="batch" value="001" readonly />
+        </div>
+
+        <div class="name-f f-item">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value="<%= loggedInUser.name %>"
+            readonly
+          />
+        </div>
+
+        <div class="id-f f-item">
+          <label for="sId">Student Id:</label>
+          <input type="number" name="sId" id="sId" autofocus required />
+        </div>
+
+        <div class="department-f f-item">
+          <label for="department">Department:</label>
+          <select name="department" id="department" required>
+            <option value="none" selected disabled hidden>- Select</option>
+            <option value="computer" selected>Computer</option>
+          </select>
+        </div>
+
+        <div class="semester-f f-item">
+          <div class="row">
+            <div class="col-5">
+              <label for="semester">Semester:</label>
+              <select name="semester" id="semester" required>
+                <option value="" hidden>- Select</option>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+                <option value="4th">4th</option>
+                <option value="5th">5th</option>
+                <option value="6th">6th</option>
+                <option value="7th">7th</option>
+                <option value="8th">8th</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label for="session">Session:</label>
+              <select name="session" id="session" required>
+                <option value="" hidden>- Select</option>
+                <option value="2018-2019">2018-2019</option>
+                <option value="2019-2020">2019-2020</option>
+                <option value="2020-2021">2020-2021</option>
+                <option value="2021-2022">2021-2022</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="gender-f f-item">
+          <label>Gender:</label>
+          <input type="radio" name="gender" value="male" required />
+          <label for="male"> Male</label>
+
+          <input type="radio" name="gender" value="female" required />
+          <label for="female"> Female</label>
+        </div>
+
+        <address>
+          <div class="mobile-f">
+            <label for="mobile">Mobile:</label>
+            <input
+              type="number"
+              name="mobile"
+              id="mobile"
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+
+          <div class="email-f">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              readonly
+              value="<%= loggedInUser.email %>"
+            />
+          </div>
+        </address>
+
+        <div class="program-f f-item">
+          <label for="program">Program:</label>
+          <select name="program" id="program" required>
+            <option value="" hidden>- Select</option>
+            <% programs.map((program)=>{ %>
+            <option value="<%= program.programname %>">
+              <%= program.programname %>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+        <p class="form-nb">NB: The candidate must have a computer.</p>
+        <div class="submit-btn">
+          <input type="submit" value="Register" id="submit" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main-bg">
+    <img src="./img/program surface logo.png" alt="" />
+  </div>
+</main>
+<% } else { %>
+<main>
+  <div class="container">
+    <h2>Registration complete</h2>
+    <a href="/u/<%= loggedInUser.username %>">See your account</a>
+  </div>
+</main>
+<% } %> <%- include("./layouts/footer.ejs"); %>

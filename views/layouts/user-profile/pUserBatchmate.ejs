@@ -1,0 +1,37 @@
+<% if( studentData.role === "student") { %>
+<div class="p-user-batchmate">
+  <div class="batchmates">
+    <p class="dash-sect-heading">Batchmates</p>
+    <% batchmates.map((batchmate)=>{ %>
+    <div class="batchmate">
+      <div class="row">
+        <div class="col-2">
+          <div class="p-user-icon">
+            <% if(batchmate.avatar) { %>
+            <img src="/uploads/avatar/<%= batchmate.avatar %>" alt="" />
+            <% } else{ %>
+            <img src="/uploads/avatar/user-icon.png" alt="" />
+            <% } %>
+          </div>
+        </div>
+        <div class="col-lg-3 col-4">
+          <div class="p-user-name">
+            <p>
+              <%= batchmate.name; %> <% if( batchmate._id ==
+              loggedInUser.userId) { %>
+              <span><b>(You)</b></span>
+              <% } %>
+            </p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-user-email">
+            <p><%= batchmate.email %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<% } %>

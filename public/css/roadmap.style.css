@@ -1,0 +1,124 @@
+.roadmap-hero {
+  background-color: #262a2e;
+}
+p.roadmap-explain {
+  color: #a5afb7;
+  font-size: 20px;
+  padding: 160px 0px;
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  word-spacing: 2px;
+}
+.roadmap-explain span {
+  font-size: 36px;
+}
+.roadmap-typesof {
+  padding: 60px 0px;
+}
+.rm-section-heading {
+  text-align: center;
+}
+.rm-section-heading h2 {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.rm-section-heading p {
+  margin-bottom: 70px;
+}
+.rm-section-heading h2::after {
+  content: "";
+  background-color: #262a2e;
+  height: 5px;
+  width: 80px;
+  display: block;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.roadmap-items {
+  background-color: #f3f3f3;
+}
+.roadmap-items-thumb img {
+  width: 100%;
+}
+.roadmap-items-content {
+  padding: 40px;
+  margin-bottom: 30px;
+}
+.roadmap-items:hover {
+  box-shadow: 0 0 8px #c7c7c7;
+}
+.roadmap-items-content h3 {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  margin-bottom: 30px;
+}
+.roadmap-items-content h3::after {
+  content: "";
+  background-color: #262a2e;
+  height: 5px;
+  width: 60px;
+  display: block;
+  border-radius: 0px 5px 5px 0px;
+}
+.roadmap-typesof p {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+}
+.ml-types-thumb {
+  width: 60%;
+  margin: auto;
+}
+.ml-types-thumb img {
+  width: 100%;
+}
+/* Roadmap */
+.page-title {
+  margin: 0;
+}
+.page-title h2 {
+  color: #212529;
+  font-size: 34px;
+}
+.page-title h2::after {
+  background-color: #212529;
+}
+.roadmap {
+  background-color: #6c757d;
+  padding: 20px 0px 60px 0px;
+}
+.roadmap-content ul {
+  list-style: none;
+  margin: 0px;
+  margin-top: 1px;
+  padding: 20px 40px;
+  border-radius: 5px;
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+}
+.roadmap-second {
+  display: none;
+  background-color: #f3f3f3;
+}
+
+li.roadmap-first-items {
+  cursor: pointer;
+  padding: 15px 30px;
+  background-color: #f3f3f3;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+li.roadmap-first-items:hover {
+  background-color: #fff;
+}
+.roadmap-second li {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.roadmap-second li:hover {
+  background-color: #fff;
+}
+ul.roadmap-third {
+  padding-bottom: 0px;
+}
+/* roadmaps page  */
+.roadmaps-page-box {
+  margin: 50px 0px;
+}

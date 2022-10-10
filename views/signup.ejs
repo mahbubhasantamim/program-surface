@@ -1,0 +1,75 @@
+<%- include("./layouts/header.ejs"); %>
+
+<div class="page-title">
+  <h2>Singup</h2>
+</div>
+<main class="signup-f">
+  <div class="container">
+    <div class="row">
+      <form action="/signup" method="post" id="signup-form">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          name="username"
+          onchange="this.value=removeSpaces(this.value)"
+          placeholder="Only alphabets & numbers are allowed ( Ex: alex123 )"
+          id="username"
+          required
+          autofocus
+          onblur="this.value=removeSpaces(this.value)"
+        />
+
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your full name"
+          id="name"
+          required
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          id="email"
+          required
+        />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter a password"
+          minlength="6"
+          id="password"
+          required
+        />
+
+        <div class="submit-btn">
+          <input type="submit" value="Signup" id="submit" />
+        </div>
+        <p style="margin-top: 15px">
+          <a href="/login">Already have an account</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  <div class="main-bg">
+    <img src="./img/program surface logo.png" alt="" />
+  </div>
+</main>
+
+<%- include("./layouts/footer.ejs"); %>
+<script language="javascript" type="text/javascript">
+  function removeSpaces(string) {
+    return string
+      .toLowerCase()
+      .split(" ")
+      .join("")
+      .split("_")
+      .join("")
+      .split("%")
+      .join("");
+  }
+</script>

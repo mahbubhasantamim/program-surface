@@ -1,0 +1,534 @@
+@font-face {
+  font-family: "Edu NSW";
+  src: url(../fonts/EduNSWACTFoundation-VariableFont_wght.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Fira Sans";
+  src: url(../fonts/FiraSansExtraCondensed-Regular.ttf);
+  font-weight: bold;
+}
+h1,
+h2 {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+}
+p,
+a {
+  font-family: "Edu NSW", Arial, Helvetica, sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.4;
+}
+.show {
+  display: block !important;
+}
+.header-top {
+  background-color: azure;
+  padding: 15px 0px;
+  box-shadow: 5px 0px 10px #f7c5d2;
+}
+.nav {
+  position: relative;
+}
+.logo img {
+  width: 90%;
+}
+nav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  z-index: 999;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+nav ul li a:hover {
+  background-color: #efb6c7;
+  border-radius: 5px;
+  transition: 0.6s;
+}
+
+/* mobile menu */
+/* source code in responsive.css file */
+.mobile-menu {
+  display: none;
+}
+.menu-icon #bars,
+.menu-icon #X {
+  font-size: 30px;
+  display: none;
+}
+
+main {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  padding: 100px 30px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  position: relative;
+}
+.main-bg {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+}
+.main-bg img {
+  width: 100%;
+}
+.page-title {
+  text-align: center;
+  padding: 40px 0;
+  margin-bottom: 30px;
+}
+.page-title h2 {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  color: #171c33;
+  font-size: 38px;
+  font-weight: 700;
+}
+.page-title h2::after {
+  display: block;
+  height: 6px;
+  width: 70px;
+  content: "";
+  margin: auto;
+  background-color: #85c1fa;
+  border-radius: 5px;
+}
+
+/* registration page */
+form label {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 15px;
+}
+form {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  z-index: 2;
+}
+.batch-f input {
+  width: 60px;
+  display: inline-block;
+}
+form input,
+.department-f select,
+.semester-f select,
+.program-f select {
+  display: block;
+  background-color: transparent;
+  padding: 5px 10px;
+  border: 1px solid #0c1023;
+  border-radius: 0 5px 5px 0;
+  font-weight: 500;
+}
+.name-f input {
+  width: 75%;
+}
+.id-f input {
+  width: 80%;
+}
+.department-f select {
+  width: 55%;
+}
+.semester-f select {
+  width: 60%;
+}
+.gender-f input {
+  display: inline-block;
+  margin-left: 10px;
+}
+form address .mobile-f input {
+  width: 50%;
+}
+form address .email-f input {
+  width: 70%;
+}
+form .program-f select {
+  width: 60%;
+}
+p.form-nb {
+  color: #000;
+  background-color: #ffb4b4;
+  padding: 5px 10px;
+  display: inline-block;
+  margin-top: 15px;
+}
+.submit-btn {
+  margin-top: 50px;
+}
+.submit-btn input {
+  width: 40%;
+  background-color: #01a206;
+  border: none;
+  color: #f3f3f3;
+}
+footer {
+  padding: 80px 0px 50px 0px;
+  background-color: #262a2e;
+}
+
+/* login page */
+.login-f {
+  width: 60%;
+  background-color: #a0d0fd41;
+}
+
+.signup-f {
+  width: 60%;
+  background-color: #ffd1df67;
+}
+#login-form,
+#signup-form {
+  width: 90%;
+  margin: auto;
+}
+#login-form input,
+#signup-form input {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.login-avatar {
+  width: 25%;
+  margin: auto;
+  background-color: azure;
+  border-radius: 50%;
+}
+.login-avatar img {
+  width: 100%;
+  border-radius: 0 0 50% 50%;
+  padding: 15px;
+}
+
+/* User Profile page */
+.profile-page {
+  background-color: #f4f4f4;
+}
+.user-head {
+  position: relative;
+  height: 160px;
+}
+.profile-edit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.profile-edit p {
+  text-align: right;
+}
+.profile-edit p a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: black;
+  border-radius: 5px;
+  color: #85c1fa;
+  font-size: 14px;
+}
+.user-avatar {
+  text-align: center;
+}
+.user-avatar img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 10px solid azure;
+}
+.user-avatar img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.user-avatar-upload span.image-ratio {
+  font-size: 14px;
+  font-family: "Edu NSW", Arial, Helvetica, sans-serif;
+  color: lightsteelblue;
+}
+.user-avatar-upload p {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+.user-avatar-upload p span {
+  float: right;
+}
+.user-avatar-upload p span i {
+  background-color: gray;
+  padding: 8px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* The actual popup */
+.user-avatar-upload {
+  display: none;
+  width: 75%;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -0);
+  padding: 20px 40px 0px 40px;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.avatar-form input[type="file"] {
+  display: none;
+}
+.avatar-preview {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.avatar-preview img {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border-radius: 50%;
+  border: 10px solid azure;
+  z-index: 9;
+}
+.avatar-form label {
+  display: block;
+  background-color: #0c1023;
+  width: 60%;
+  margin: 20px auto;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.avatar-form label:hover {
+  background-color: #010413;
+}
+.avatar-upload-btn {
+  text-align: right;
+  margin-bottom: 20px;
+}
+.avatar-upload-btn a {
+  color: #3982e4;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.avatar-upload-btn a:hover {
+  background-color: #3a3b3c;
+}
+.avatar-upload-btn input {
+  display: inline-block;
+  background-color: #3982e4;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 40px;
+  color: #fff;
+}
+
+/* avatar upload end  */
+.user-name {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+
+  position: absolute;
+  top: 50%;
+  transform: translate(-0, -50%);
+}
+.profile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  background-color: azure;
+  border-radius: 10px;
+}
+.profile-menu ul li {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.profile-menu ul li:hover {
+  background-color: #f3f3f3;
+}
+.user-details {
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+.user-information ul {
+  list-style: none;
+  margin: 0px;
+  padding: 20px;
+  background-color: azure;
+  border-radius: 10px;
+}
+.user-information ul li {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+.user-information ul li:hover {
+  background-color: aliceblue;
+}
+.user-information ul li p {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+}
+
+.user-information ul li p {
+  margin: 0;
+  font-size: 20px;
+}
+.p-user-resource {
+  display: none;
+  background-color: azure;
+  border-radius: 10px;
+  padding: 20px;
+}
+.resource {
+  padding: 20px 30px;
+  border-radius: 5px;
+}
+.resource:hover {
+  background-color: #f3f3f3;
+}
+.resource h3 {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+.resource hr {
+  margin-bottom: 0px;
+}
+.p-user-assignment {
+  display: none;
+  background-color: azure;
+  border-radius: 10px;
+  padding: 20px;
+}
+.assignment {
+  background-color: #f3f3f3;
+  padding: 20px 30px 10px 30px;
+  margin-bottom: 20px;
+}
+p.assignment-cat {
+  padding: 5px 10px;
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+}
+.assignment p {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+}
+span.assignment-catagory {
+  background-color: azure;
+  padding: 5px 10px;
+}
+span.assignment-date {
+  float: right;
+}
+
+.p-user-batchmate {
+  display: none;
+  background-color: azure;
+  border-radius: 10px;
+  padding: 20px;
+}
+.batchmate {
+  background-color: rgb(255, 247, 247);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.batchmate:hover {
+  box-shadow: 0 0 8px rgb(187, 187, 187);
+}
+
+.batchmate .p-user-name p,
+.batchmate .p-user-email p {
+  margin-bottom: 0;
+}
+.p-user-email {
+  margin-left: 15px;
+}
+.batchmate .p-user-name,
+.batchmate .p-user-email {
+  position: absolute;
+  top: 50%;
+  transform: translate(-0, -50%);
+}
+
+.batchmate .p-user-icon {
+  text-align: right;
+}
+.batchmate .p-user-icon img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: azure;
+  border: 5px solid white;
+}
+/* footr */
+.footer-logo {
+  border-right: 2px solid #415664;
+}
+.footer-logo img {
+  width: 80%;
+}
+.footer-name {
+  margin-top: 20px;
+  color: #728897;
+  font-family: "Edu NSW", Arial, Helvetica, sans-serif;
+}
+.footer-name a {
+  color: #728897;
+}
+.footer-name address {
+  display: none;
+}
+.footer-content {
+  color: #728897;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.footer-content a {
+  text-decoration: none;
+  color: #728897;
+}
+
+marquee.notice {
+  padding-top: 10px;
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  color: red;
+}

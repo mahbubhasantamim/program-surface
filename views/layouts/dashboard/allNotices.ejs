@@ -1,0 +1,31 @@
+<div class="dashboard-allNotices">
+  <div class="all-notices">
+    <p class="dash-sect-heading">Notices</p>
+
+    <form action="/addnotice" method="post" id="notice-form">
+      <label for="program">Program:</label>
+      <select name="program" id="program" required>
+        <option value="" hidden>- Select</option>
+        <option value="all-students">All students</option>
+        <% programs.map((program)=>{ %>
+        <option value="<%= program.programname %>">
+          <%= program.programname %>
+        </option>
+        <% }) %>
+      </select>
+      <label for="notice">Notice:</label>
+      <textarea name="notice" placeholder="Notice details"></textarea>
+
+      <div class="submit-btn">
+        <input type="submit" value="Add Notice" id="submit" />
+      </div>
+    </form>
+    <div class="notice-list">
+      <ul>
+        <% if(notices) { notices.map((notice)=>{ %>
+        <li><%= notice.notice %> <span>- <%= notice.program %></span></li>
+        <% })} %>
+      </ul>
+    </div>
+  </div>
+</div>

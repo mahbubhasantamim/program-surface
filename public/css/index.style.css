@@ -1,0 +1,182 @@
+.section-heading {
+  margin-bottom: 70px;
+}
+
+.section-heading h2 {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #171c33;
+  font-size: 38px;
+  font-weight: 700;
+}
+.section-heading h2::after {
+  display: block;
+  height: 6px;
+  width: 70px;
+  content: "";
+  background-color: #85c1fa;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.hero {
+  background: url("../img/hero-bg.jpg");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  height: 600px;
+  width: 100%;
+  background-color: rgba(206, 148, 218, 0.26);
+  display: block;
+  position: absolute;
+}
+.hero-content {
+  width: 75% !important;
+  margin-top: 160px !important;
+  z-index: 100;
+}
+.hero-content h3 {
+  font-family: "Edu NSW", Arial, Helvetica, sans-serif;
+  margin-bottom: 50px;
+}
+.hero-content h1 {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  color: #000066;
+  line-height: 55px;
+}
+span.highlight {
+  background-color: #f3f3f37d;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+.programs {
+  padding-top: 90px;
+}
+.app-dev,
+.machine-learning,
+.web-dev,
+.graphics {
+  padding: 0px 0px 100px 0px;
+}
+.program-thumb {
+  /* margin-top: 170px; */
+  text-align: center;
+}
+
+.app-thumb {
+  color: #3fda86;
+  margin-top: 170px;
+}
+.app-thumb i {
+  font-size: 170px;
+}
+
+.machine-thumb {
+  color: #1b1ba5;
+  margin-top: 50px;
+}
+.machine-thumb img {
+  width: 80%;
+}
+/* .machine-thumb i {
+  font-size: 170px;
+  margin-bottom: 40px;
+} */
+.web-thumb {
+  margin-top: 70px;
+}
+.web-thumb h2 {
+  color: #45a6af;
+}
+
+.web-thumb img {
+  width: 70%;
+}
+.graphics-thumb {
+  margin-top: 170px;
+  color: #0a0e2e;
+}
+.graphics-thumb i {
+  font-size: 170px;
+  margin-bottom: 40px;
+  /* color: #0a0e2e; */
+}
+
+.program-cont-thumb img {
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.589);
+}
+.program-content-s {
+  background-color: #d7effe;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px silver;
+}
+.program-content-p:hover {
+  box-shadow: 0px 0px 15px rgba(135, 207, 235, 0.726);
+}
+.program-content-p {
+  background-color: #f7c5d2ea;
+  box-shadow: 0px 0px 10px silver;
+}
+.program-content-s:hover {
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px rgba(206, 148, 218, 0.425);
+}
+
+.program-content p {
+  padding: 40px 40px 10px 40px;
+  font-size: 18px;
+}
+.program-content .curriculum-btn {
+  padding: 0px 40px 50px 40px;
+}
+.program-content .curriculum-btn a {
+  padding: 10px 20px;
+  background-color: #000;
+  text-decoration: none;
+  color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.program-content h2 {
+  margin-bottom: 30px;
+}
+
+/* faq */
+.faq {
+  background-color: #f2f2f2;
+  padding: 60px 0px;
+}
+.q-item {
+  background-color: #fff;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px silver;
+  cursor: pointer;
+}
+.q-item:hover {
+  box-shadow: 0 0 10px #f7c5d2ea;
+}
+
+.question span {
+  float: right;
+}
+#down-arrow {
+  display: none;
+}
+.question h6 {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  padding: 15px 30px;
+}
+.answer p {
+  padding: 15px 30px;
+}
+
+#answer {
+  display: none;
+}

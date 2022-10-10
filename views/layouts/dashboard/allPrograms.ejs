@@ -1,0 +1,52 @@
+<div class="dashboard-allPrograms">
+  <div class="all-program">
+    <p class="dash-sect-heading">Programs</p>
+
+    <% if(admin.role === "co-founder" || admin.role === "admin" ) { %>
+    <div class="add-program">
+      <span class="add-program-btn" onclick="showProgramForm()"
+        ><i class="fa-solid fa-plus"></i> Add Program</span
+      >
+      <form action="/addprogram" method="post" id="program-form">
+        <label for="programname">Program:</label>
+        <input
+          type="text"
+          name="programname"
+          id="programname"
+          placeholder="Program name (Ex: Web development)"
+          required
+        />
+
+        <label for="programrole">Role:</label>
+        <input
+          type="text"
+          name="programrole"
+          id="programrole"
+          placeholder="Program role (Ex: Web developer)"
+          required
+        />
+
+        <div class="submit-btn">
+          <input type="submit" value="Add Program" id="submit" />
+        </div>
+      </form>
+    </div>
+    <% } %>
+
+    <!-- Program list  -->
+    <div class="all-programs">
+      <ul>
+        <% programs.map((program)=>{ %>
+        <li><%= program.programname %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  const programForm = document.querySelector("#program-form");
+  const showProgramForm = () => {
+    programForm.classList.toggle("show");
+  };
+</script>

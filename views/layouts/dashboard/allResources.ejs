@@ -1,0 +1,52 @@
+<div class="dashboard-allResources">
+  <div class="all-resource">
+    <p class="dash-sect-heading">Add Resources</p>
+    <form action="/addresource" method="post" id="resource-form">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        name="title"
+        id="title"
+        placeholder="Resource title"
+        required
+      />
+
+      <label for="link">Link:</label>
+      <input
+        type="text"
+        name="link"
+        id="link"
+        placeholder="Resource link"
+        required
+      />
+
+      <label for="type">Resource type:</label>
+      <select name="type" id="type" required>
+        <option value="" hidden>- Select</option>
+        <option value="Application">Application</option>
+        <option value="Videos">Videos</option>
+        <option value="Documentation">Documentation</option>
+      </select>
+
+      <label for="desc">Description:</label>
+      <textarea name="desc" placeholder="Short message"></textarea>
+
+      <label for="sector">Sector:</label>
+      <select name="sector" id="sector" required>
+        <option value="" hidden>- Select</option>
+        <% programs.map((program)=>{ %>
+        <option value="<%= program.programname %>">
+          <%= program.programname %>
+        </option>
+        <% }) %>
+      </select>
+
+      <div class="submit-btn">
+        <input type="submit" value="Add resource" id="submit" />
+      </div>
+    </form>
+  </div>
+  <div class="all-resource-btn">
+    <a href="/resources">See all resources</a>
+  </div>
+</div>

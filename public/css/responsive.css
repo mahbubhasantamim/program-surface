@@ -1,0 +1,342 @@
+@media screen and (max-width: 1199px) {
+  .footer-name {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .desktop-menu {
+    display: none;
+  }
+  .menu-icon #bars {
+    display: block;
+  }
+  .menu-icon {
+    text-align: right;
+    margin-top: 25px;
+  }
+
+  .mobile-menu {
+    display: block;
+    width: 100%;
+  }
+  .mobile-menu #m-nav {
+    display: none;
+  }
+  .mobile-menu ul {
+    list-style: none;
+    text-align: right;
+    padding: 0px;
+  }
+  .mobile-menu ul li {
+    margin-top: 15px;
+  }
+  .mobile-menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 10px 10px 10px 60px;
+  }
+
+  .mobile-menu ul li a:hover {
+    background-color: #efb6c7;
+    border-radius: 5px;
+    transition: 0.6s;
+  }
+
+  .thumb-section {
+    position: relative;
+  }
+  .machine-thumb img {
+    width: 100%;
+  }
+  .web-thumb img {
+    width: 100%;
+  }
+  .web-thumb,
+  .machine-thumb {
+    margin-top: 0;
+    position: absolute;
+    top: 40%;
+    transform: translate(-0, -50%);
+  }
+
+  .signup-f,
+  .login-f,
+  main {
+    width: 80%;
+  }
+  .name-f input,
+  .id-f input,
+  .department-f select,
+  form address .mobile-f input,
+  form address .email-f input,
+  form .program-f select {
+    width: 90%;
+  }
+  .semester-f select {
+    width: 100%;
+  }
+  .submit-btn input {
+    width: 50%;
+  }
+
+  /* dashboard */
+  .dashboard {
+    margin-top: 0px;
+  }
+  .dashboard-menu ul {
+    padding: 0px;
+  }
+  .dashboard-menu ul li {
+    float: left;
+    background: #efb6c7;
+    margin: 5px;
+    font-size: 12px;
+  }
+  .dashboard-menu ul li:hover {
+    box-shadow: 0px 0px 10px #efb6c7;
+  }
+  .dashboard-sections {
+    margin-top: 30px;
+  }
+  /* footer  */
+  .footer-content {
+    display: none;
+  }
+  .footer-name {
+    margin-top: 27px;
+    text-align: center;
+  }
+  .footer-name address {
+    display: block;
+    margin: 40px 0px;
+  }
+  .footer-name address a {
+    text-decoration: none;
+  }
+  .footer-logo {
+    border: unset;
+    text-align: center;
+  }
+  .footer-logo img {
+    width: 200px;
+  }
+  .f-logo {
+    order: 2;
+  }
+  .f-name {
+    order: 1;
+  }
+  .f-slug {
+    order: 2;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hero {
+    height: 520px;
+  }
+  .hero::before {
+    height: 520px;
+  }
+  .hero-content {
+    width: 80% !important;
+    margin-top: 120px !important;
+  }
+  .hero-content h1 {
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .hero-btn {
+    margin-top: 70px;
+  }
+  .mobile-menu ul li a {
+    font-size: 18px;
+    padding: 10px 10px 10px 10px;
+  }
+
+  .program-thumb {
+    margin-bottom: 40px;
+  }
+  .app-dev,
+  .machine-learning,
+  .web-dev,
+  .graphics {
+    padding: 0px 0px 50px 0px;
+  }
+  .app-thumb,
+  .graphics-thumb {
+    margin-top: 0;
+  }
+  .app-thumb i {
+    margin-bottom: 0px;
+    font-size: 100px;
+  }
+  .graphics-thumb i {
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+  .web-thumb,
+  .machine-thumb {
+    position: unset;
+    transform: unset;
+  }
+  .machine-thumb img,
+  .web-thumb img {
+    width: 40%;
+  }
+  .thumb-section {
+    order: 1;
+  }
+  .content-section {
+    order: 2;
+  }
+
+  .signup-f,
+  .login-f,
+  main {
+    width: 90%;
+  }
+  .user-details {
+    margin-top: 0px;
+  }
+  .user-info-sections {
+    margin-top: 30px;
+  }
+  .profile-menu ul {
+    padding: 0px;
+  }
+  .profile-menu ul li {
+    float: left;
+    background: #efb6c7;
+    margin: 5px;
+    font-size: 12px;
+  }
+  .profile-menu ul li:hover {
+    box-shadow: 0px 0px 10px #efb6c7;
+  }
+
+  .user-avatar-upload {
+    width: 90%;
+  }
+  .avatar-preview img {
+    width: 180px;
+    height: 180px;
+  }
+  .avatar-form label {
+    font-size: 14px;
+  }
+  .avatar-upload-btn {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* dashboard */
+  .user .desh-user-name p,
+  .user .desh-user-email p {
+    font-size: 14px;
+  }
+  .confirm-delete {
+    padding: 40px 50px;
+  }
+  footer {
+    padding: 50px 0px 60px 0px;
+  }
+  .footer-logo img {
+    width: 140px;
+  }
+  ul.roadmap-first {
+    padding: 0px;
+  }
+  .roadmaps p,
+  .roadmap-items-content p {
+    font-size: 15px;
+  }
+  .ml-types-thumb {
+    width: 85%;
+  }
+  .roadmap-content ul {
+    padding: 10px 20px;
+  }
+  .roadmap-second li {
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  hr.profile-hr {
+    margin-top: -5px;
+  }
+  .menu-icon #bars,
+  .menu-icon #X {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  .user-name {
+    margin-left: 15px;
+    transform: translate(-0, -60%);
+  }
+  .user-avatar img {
+    width: 135px;
+    height: 135px;
+    border: 7px solid azure;
+  }
+  .profile-edit {
+    top: 30px;
+  }
+  .profile-edit p a {
+    background-color: unset;
+    color: #000;
+    font-size: 18px;
+  }
+  .profile-edit span {
+    display: none;
+  }
+  .p-user-batchmate {
+    padding: 10px;
+  }
+  .batchmate .p-user-name p,
+  .batchmate .p-user-email p {
+    font-size: 13px;
+  }
+  .batchmate .p-user-icon img {
+    width: 50px;
+    height: 50px;
+    border: 5px solid azure;
+  }
+  .page-title {
+    margin-bottom: 0px;
+  }
+  .page-title h2 {
+    font-size: 28px;
+  }
+  .user-information ul li p {
+    font-size: 18px;
+  }
+  .program-content p {
+    font-size: 16px;
+  }
+  /* dashboard */
+  .dashboard-alluser {
+    padding: 10px;
+  }
+  .user .desh-user-name p,
+  .user .desh-user-email p {
+    font-size: 13px;
+    margin-top: 15px;
+  }
+
+  .user .desh-user-name p span,
+  .user .desh-user-email p span {
+    display: none;
+  }
+  .user .desh-user-icon img {
+    width: 50px;
+    height: 50px;
+    border: 5px solid azure;
+  }
+  .dash-user-details ul li p {
+    font-size: 14px;
+  }
+}

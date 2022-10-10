@@ -1,0 +1,170 @@
+<div class="dashboard-allinstructors">
+  <div class="all-insturctors">
+    <p class="dash-sect-heading">Instructors</p>
+
+    <% if(admin.role === "co-founder" || admin.role === "admin" ) { %>
+    <div class="add-instructor">
+      <span class="add-instructor-btn" onclick="showInstructorForm()"
+        ><i class="fa-solid fa-plus"></i> Add Instructor</span
+      >
+      <form action="/addinstructor" method="post" id="instructor-form">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter instructor email"
+          required
+        />
+
+        <label for="mobile">Mobile:</label>
+        <input
+          type="number"
+          name="mobile"
+          id="mobile"
+          placeholder="Enter your phone number"
+          required
+        />
+
+        <label for="designation">Designation:</label>
+        <select name="designation" id="designation" required>
+          <option value="" hidden>- Select</option>
+          <% programs.map((program)=>{ %>
+          <option value="<%= program.programrole %>">
+            <%= program.programrole %>
+          </option>
+          <% }) %>
+        </select>
+
+        <div class="submit-btn">
+          <input type="submit" value="Add instructor" id="submit" />
+        </div>
+      </form>
+    </div>
+    <% } %>
+
+    <!-- instructor -->
+    <div class="all-users">
+      <p style="text-align: right">
+        Total Instructor - <%= instructors.length %>
+      </p>
+      <% instructors.map((instructor)=>{ %>
+      <div class="user" id="<%= instructor._id %>">
+        <div class="dash-user-info">
+          <div class="row">
+            <div class="col-2">
+              <div class="desh-user-icon">
+                <% if(instructor.avatar) { %>
+                <img src="/uploads/avatar/<%= user.avatar %>" alt="" />
+                <% } else { %>
+                <img src="/uploads/avatar/user-icon.png" alt="" />
+                <% } %>
+              </div>
+            </div>
+            <div class="col-lg-5 col-5">
+              <div class="desh-user-name">
+                <p>
+                  <%= instructor.name %>
+                  <span> - <%= instructor.designation %></span>
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-5 col-5">
+              <div class="desh-user-email">
+                <p>
+                  <%= instructor.email %>
+                  <span
+                    ><i class="fa-solid fa-angle-right" id="right-arrow"></i
+                  ></span>
+                  <span
+                    ><i class="fa-solid fa-angle-down" id="down-arrow"></i
+                  ></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-user-details">
+          <hr />
+          <ul>
+            <li>
+              <p>Username - <%= instructor.username %></p>
+            </li>
+            <li>
+              <p>designation - <%= instructor.designation %></p>
+            </li>
+            <li>
+              <p>Mobile - <%= instructor.mobile %></p>
+            </li>
+            <li>
+              <p>Email - <%= instructor.email %></p>
+            </li>
+
+            <% if(admin.role === "co-founder" || admin.role === "admin") { %>
+            <div class="dash-u-update-btn">
+              <span class="dash-u-delete"><a>Romove</a></span>
+              <span class="dash-u-update"><a href="#">Update</a></span>
+            </div>
+            <div class="confirm-delete">
+              <p>Confirm remove</p>
+              <span class="dash-u-delete-cancel"><a>Cancel</a></span>
+              <span class="dash-u-delete-confirm"
+                ><a onclick="removeInstructor('<%= instructor._id %>')"
+                  >Confirm</a
+                ></span
+              >
+            </div>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+<script>
+  const instructorForm = document.querySelector("#instructor-form");
+  const showInstructorForm = () => {
+    instructorForm.classList.toggle("show");
+  };
+
+  // user list design
+  var deshUserInfo = document.querySelectorAll(".dash-user-info");
+  var deshUserDetails = document.querySelectorAll(".dash-user-details");
+  var rightArrow = document.querySelectorAll("#right-arrow");
+  var downArrow = document.querySelectorAll("#down-arrow");
+
+  for (let i = 0; i < deshUserInfo.length; i++) {
+    let count = 0;
+
+    deshUserInfo[i].addEventListener("click", function () {
+      deshUserDetails[i].style.display = "block";
+      rightArrow[i].style.display = "none";
+      downArrow[i].style.display = "block";
+      count++;
+
+      if (count % 2 == 0) {
+        deshUserDetails[i].style.display = "none";
+        rightArrow[i].style.display = "block";
+        downArrow[i].style.display = "none";
+      }
+    });
+  }
+
+  //remove-instructor logic
+  async function removeInstructor(instructorId) {
+    let response = await fetch(`/removeInstructor/${instructorId}`, {
+      method: "PUT",
+    });
+    let result = await response.json();
+    if (result.errors) {
+      console.log(result.errors);
+    } else {
+      document.getElementById(`${instructorId}`).remove();
+      setTimeout(() => {
+        document.location.reload();
+      }, 1000);
+    }
+  }
+</script>

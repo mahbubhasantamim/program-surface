@@ -1,0 +1,279 @@
+<%- include("./layouts/header.ejs"); %>
+
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero-content">
+        <h3>
+          <% if (loggedInUser && loggedInUser.username) { %> Welcome
+          <b><%= loggedInUser.name %></b>
+          <% } %>
+        </h3>
+        <h1>
+          Our motive is to aware students of their
+          <span class="highlight">carrier</span> in
+          <span class="highlight">IT</span> and prepares them ready for the
+          <span class="highlight">industry.</span>
+          <span class="highlight">Experts</span> will
+          <span class="highlight">assist</span> you to get rid of problems.
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="programs">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Module</h2>
+    </div>
+    <!-- App development -->
+    <div class="app-dev">
+      <div class="row">
+        <div class="col-lg-5 col-md-4 thumb-section">
+          <div class="program-thumb">
+            <div class="app-thumb">
+              <i class="fa-brands fa-android"></i>
+              <h2>App Development</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-8 content-section">
+          <div class="program-content program-content-s">
+            <div class="program-cont-thumb">
+              <img src="./img/app1.jpg" alt="" />
+            </div>
+            <p>
+              Mobile app development is the act or process by which a mobile app
+              is developed for mobile devices, such as personal digital
+              assistants, enterprise digital assistants, or mobile phones. These
+              software applications are designed to run on mobile devices, such
+              as a smartphone or tablet computers. These applications can be
+              pre-installed on phones during manufacturing platforms, or
+              delivered as web applications using server-side or client-side
+              processing to provide an "application-like" experience within a
+              web browser. Application software developers also must consider a
+              long array of screen sizes, hardware specifications, and
+              configurations because of intense competition in mobile software
+              and changes within each of the platforms. Mobile app development
+              has been steadily growing, in revenues and jobs created.
+            </p>
+            <div class="curriculum-btn">
+              <!-- <a href="#">Curriculum</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Machine learning -->
+    <div class="machine-learning">
+      <div class="row">
+        <div class="col-lg-7 col-md-8 content-section">
+          <div class="program-content program-content-p">
+            <div class="program-cont-thumb">
+              <img src="./img/machine-learning.jpg" alt="" />
+            </div>
+            <p>
+              Machine learning (ML) is a field of inquiry devoted to
+              understanding and building methods that 'learn', that is, methods
+              that leverage data to improve performance on some set of tasks. It
+              is seen as a part of artificial intelligence. Machine learning
+              algorithms build a model based on sample data, known as training
+              data, in order to make predictions or decisions without being
+              explicitly programmed to do so. Machine learning algorithms are
+              used in a wide variety of applications, such as in medicine, email
+              filtering, speech recognition, and computer vision, where it is
+              difficult or unfeasible to develop conventional algorithms to
+              perform the needed tasks.
+            </p>
+            <div class="curriculum-btn">
+              <a href="/machinelearning">Curriculum</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-4 thumb-section">
+          <div class="program-thumb">
+            <div class="machine-thumb">
+              <img src="./img/ml-logo.png" alt="" />
+              <h2>Machine Learning</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Web development -->
+    <div class="web-dev">
+      <div class="row">
+        <div class="col-lg-5 col-md-4 thumb-section">
+          <div class="program-thumb">
+            <div class="web-thumb">
+              <img src="./img/web-logo.png" alt="" />
+              <h2>Web Development</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-8 content-section">
+          <div class="program-content program-content-s">
+            <div class="program-cont-thumb">
+              <img src="./img/web-dev.jpg" alt="" />
+            </div>
+            <p>
+              Web development is the work involved in developing a website for
+              the Internet (World Wide Web) or an intranet (a private network).
+              Web development can range from developing a simple single static
+              page of plain text to complex web applications, electronic
+              businesses, and social network services. A more comprehensive list
+              of tasks to which Web development commonly refers may include Web
+              engineering, Web design, Web content development, client liaison,
+              client-side/server-side scripting, Web server and network security
+              configuration, and e-commerce development.
+            </p>
+            <div class="curriculum-btn">
+              <a href="/webdevelopment">Curriculum</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Graphics design -->
+    <div class="graphics">
+      <div class="row">
+        <div class="col-lg-7 col-md-8 content-section">
+          <div class="program-content program-content-p">
+            <div class="program-cont-thumb">
+              <img src="./img/graphics.jpg" alt="" />
+            </div>
+            <p>
+              Graphic design is a profession, applied art, and academic
+              discipline whose activity consists in projecting visual
+              communications intended to transmit specific messages to social
+              groups, with specific objectives. Graphic design is an
+              interdisciplinary branch of design and of the fine arts. Its
+              practice involves creativity, innovation, and lateral thinking
+              using manual or digital tools, where it is usual to use text and
+              graphics to communicate visually.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-4 thumb-section">
+          <div class="program-thumb">
+            <div class="graphics-thumb">
+              <i class="fa-solid fa-pen-nib"></i>
+              <h2>Graphics Design</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq" id="faq">
+  <div class="container">
+    <div class="section-heading">
+      <h2>FAQ</h2>
+    </div>
+    <div class="questions">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="q-item" id="q-item">
+            <div class="question">
+              <h6 id="question">
+                What is App development?
+                <span
+                  ><i class="fa-solid fa-angle-right" id="right-arrow"></i
+                ></span>
+                <span
+                  ><i class="fa-solid fa-angle-down" id="down-arrow"></i
+                ></span>
+              </h6>
+            </div>
+            <div class="answer">
+              <p id="answer">
+                App development is the process in which developers create an
+                application to be used on smartphones, tablets, and other mobile
+                devices. While app development sometimes involves creating a
+                web-based app or a desktop version of the app, the majority of
+                app development projects are deployed to mobile and tablet
+                devices.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="q-item" id="q-item">
+            <div class="question">
+              <h6 id="question">
+                What is machine-learning?
+                <span
+                  ><i class="fa-solid fa-angle-right" id="right-arrow"></i
+                ></span>
+                <span
+                  ><i class="fa-solid fa-angle-down" id="down-arrow"></i
+                ></span>
+              </h6>
+            </div>
+            <div class="answer">
+              <p id="answer">
+                Machine learning is a branch of artificial intelligence (AI) and
+                computer science which focuses on the use of data and algorithms
+                to imitate the way that humans learn, gradually improving its
+                accuracy.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="q-item" id="q-item">
+            <div class="question">
+              <h6 id="question">
+                What is Web development?
+                <span
+                  ><i class="fa-solid fa-angle-right" id="right-arrow"></i
+                ></span>
+                <span
+                  ><i class="fa-solid fa-angle-down" id="down-arrow"></i
+                ></span>
+              </h6>
+            </div>
+            <div class="answer">
+              <p id="answer">
+                Web development, also known as website development, refers to
+                the tasks associated with creating, building, and maintaining
+                websites and web applications that run online on a browser. It
+                may, however, also include web design, web programming, and
+                database management.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="q-item" id="q-item">
+            <div class="question">
+              <h6 id="question">
+                What is Graphics design?
+                <span
+                  ><i class="fa-solid fa-angle-right" id="right-arrow"></i
+                ></span>
+                <span
+                  ><i class="fa-solid fa-angle-down" id="down-arrow"></i
+                ></span>
+              </h6>
+            </div>
+            <div class="answer">
+              <p id="answer">
+                Graphic design is the art or profession of visual communication
+                that combines images, words, and ideas to convey information to
+                an audience, especially to produce a specific effect. In other
+                words, graphic design is communication design; It’s a way of
+                conveying ideas through visuals and design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("./layouts/footer.ejs"); %>

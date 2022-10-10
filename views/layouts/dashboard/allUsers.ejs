@@ -1,0 +1,366 @@
+<div class="dashboard-allusers">
+  <div class="all-users">
+    <p class="dash-sect-heading">All users</p>
+
+    <p style="text-align: right">Total users - <%= users.length %></p>
+    <% if(loggedInUser.role === "instructor") { %> <% users.map((user)=>{ %>
+
+    <div class="user" id="<%= user._id %>">
+      <div class="dash-user-info">
+        <div class="row">
+          <div class="col-2">
+            <div class="desh-user-icon">
+              <% if(user.avatar) { %>
+              <img src="/uploads/avatar/<%= user.avatar %>" alt="" />
+              <% } else { %>
+              <img src="/uploads/avatar/user-icon.png" alt="" />
+              <% } %>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5">
+            <div class="desh-user-name">
+              <p>
+                <%= user.name %> <% if (user.role === "co-founder" || user.role
+                === "admin" || user.role === "instructor") { %>
+                <span> - <%= user.role %></span>
+                <% } else if(user.program) { %>
+                <span> - <%= user.program %></span>
+                <% } %>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5">
+            <div class="desh-user-email">
+              <p>
+                <%= user.email %>
+                <span
+                  ><i class="fa-solid fa-angle-right" id="right-arrow"></i
+                ></span>
+                <span
+                  ><i class="fa-solid fa-angle-down" id="down-arrow"></i
+                ></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-user-details">
+        <hr />
+        <ul>
+          <% if(user.role === "student") { %>
+          <li>
+            <p>Program - <%= user.program %></p>
+          </li>
+          <li>
+            <p>Username - <%= user.username %></p>
+          </li>
+
+          <li>
+            <p>Batch - <%= user.student.batch %></p>
+          </li>
+          <li>
+            <p>Student Id - <%= user.student.sId %></p>
+          </li>
+          <li>
+            <p>Department - <%= user.student.department %></p>
+          </li>
+          <li>
+            <p>Semester - <%= user.student.semester %></p>
+          </li>
+          <li>
+            <p>Session - <%= user.student.session %></p>
+          </li>
+          <li>
+            <p>Gender - <%= user.student.gender %></p>
+          </li>
+          <li>
+            <p>Mobile - <%= user.student.mobile %></p>
+          </li>
+          <li>
+            <p>Email - <%= user.email %></p>
+          </li>
+          <li>
+            <p>Joined - <%= user.date %></p>
+          </li>
+
+          <% } else { %>
+
+          <li>
+            <p>Username - <%= user.username %></p>
+          </li>
+          <% if(user.designation){ %>
+          <li>
+            <p>Designation - <%= user.designation %></p>
+          </li>
+          <% } %> <% if(user.gender){ %>
+          <li>
+            <p>Gender - <%= user.gender %></p>
+          </li>
+          <% } %> <% if(user.mobile){ %>
+          <li>
+            <p>Mobile - <%= user.mobile %></p>
+          </li>
+          <% } %>
+          <li>
+            <p>Email - <%= user.email %></p>
+          </li>
+          <li>
+            <p>Joined - <%= user.date %></p>
+          </li>
+
+          <% } %>
+        </ul>
+      </div>
+    </div>
+    <% }) %> <% } else { %> <% users.map((user)=>{ %> <% if(user.role ===
+    "co-founder"){ %>
+
+    <div class="user" id="<%= user._id %>">
+      <div class="dash-user-info">
+        <div class="row">
+          <div class="col-2">
+            <div class="desh-user-icon">
+              <% if(user.avatar) { %>
+              <img src="/uploads/avatar/<%= user.avatar %>" alt="" />
+              <% } else{ %>
+              <img src="/uploads/avatar/user-icon.png" alt="" />
+              <% } %>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5">
+            <div class="desh-user-name">
+              <p>
+                <%= user.name %> <% if (user.role === "co-founder" || user.role
+                === "admin" || user.role === "instructor") { %>
+                <span> - <%= user.role %></span>
+                <% } else if(user.program) { %>
+                <span> - <%= user.program %></span>
+                <% } %>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5">
+            <div class="desh-user-email">
+              <p>
+                <%= user.email %>
+                <span
+                  ><i class="fa-solid fa-angle-right" id="right-arrow"></i
+                ></span>
+                <span
+                  ><i class="fa-solid fa-angle-down" id="down-arrow"></i
+                ></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-user-details">
+        <hr />
+        <ul>
+          <% if(user.role === "student") { %>
+          <li>
+            <p>Program - <%= user.program %></p>
+          </li>
+          <li>
+            <p>Username - <%= user.username %></p>
+          </li>
+
+          <li>
+            <p>Batch - <%= user.student.batch %></p>
+          </li>
+          <li>
+            <p>Student Id - <%= user.student.sId %></p>
+          </li>
+          <li>
+            <p>Department - <%= user.student.department %></p>
+          </li>
+          <li>
+            <p>Semester - <%= user.student.semester %></p>
+          </li>
+          <li>
+            <p>Session - <%= user.student.session %></p>
+          </li>
+          <li>
+            <p>Gender - <%= user.student.gender %></p>
+          </li>
+          <li>
+            <p>Mobile - <%= user.student.mobile %></p>
+          </li>
+          <li>
+            <p>Email - <%= user.email %></p>
+          </li>
+          <li>
+            <p>Joined - <%= user.date %></p>
+          </li>
+
+          <% } else { %>
+
+          <li>
+            <p>Username - <%= user.username %></p>
+          </li>
+          <% if(user.designation){ %>
+          <li>
+            <p>Designation - <%= user.designation %></p>
+          </li>
+          <% } %> <% if(user.gender){ %>
+          <li>
+            <p>Gender - <%= user.gender %></p>
+          </li>
+          <% } %> <% if(user.mobile){ %>
+          <li>
+            <p>Mobile - <%= user.mobile %></p>
+          </li>
+          <% } %>
+          <li>
+            <p>Email - <%= user.email %></p>
+          </li>
+          <li>
+            <p>Joined - <%= user.date %></p>
+          </li>
+
+          <% } %>
+        </ul>
+      </div>
+    </div>
+    <% } else { %>
+    <div class="user" id="<%= user._id %>">
+      <div class="dash-user-info">
+        <div class="row">
+          <div class="col-2">
+            <div class="desh-user-icon">
+              <% if(user.avatar) { %>
+              <img src="/uploads/avatar/<%= user.avatar %>" alt="" />
+              <% } else{ %>
+              <img src="/uploads/avatar/user-icon.png" alt="" />
+              <% } %>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5">
+            <div class="desh-user-name">
+              <p>
+                <%= user.name %> <% if (user.role === "co-founder" || user.role
+                === "admin" || user.role === "instructor") { %>
+                <span> - <%= user.role %></span>
+                <% } else if(user.program) { %>
+                <span> - <%= user.program %></span>
+                <% } %>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5">
+            <div class="desh-user-email">
+              <p>
+                <%= user.email %>
+                <span
+                  ><i class="fa-solid fa-angle-right" id="right-arrow"></i
+                ></span>
+                <span
+                  ><i class="fa-solid fa-angle-down" id="down-arrow"></i
+                ></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-user-details">
+        <hr />
+        <ul>
+          <% if(user.role === "student") { %>
+          <li>
+            <p>Program - <%= user.program %></p>
+          </li>
+          <li>
+            <p>Username - <%= user.username %></p>
+          </li>
+
+          <li>
+            <p>Batch - <%= user.student.batch %></p>
+          </li>
+          <li>
+            <p>Student Id - <%= user.student.sId %></p>
+          </li>
+          <li>
+            <p>Department - <%= user.student.department %></p>
+          </li>
+          <li>
+            <p>Semester - <%= user.student.semester %></p>
+          </li>
+          <li>
+            <p>Session - <%= user.student.session %></p>
+          </li>
+          <li>
+            <p>Gender - <%= user.student.gender %></p>
+          </li>
+          <li>
+            <p>Mobile - <%= user.student.mobile %></p>
+          </li>
+          <li>
+            <p>Email - <%= user.email %></p>
+          </li>
+          <li>
+            <p>Joined - <%= user.date %></p>
+          </li>
+
+          <% } else { %>
+
+          <li>
+            <p>Username - <%= user.username %></p>
+          </li>
+          <% if(user.designation){ %>
+          <li>
+            <p>Designation - <%= user.designation %></p>
+          </li>
+          <% } %> <% if(user.gender){ %>
+          <li>
+            <p>Gender - <%= user.gender %></p>
+          </li>
+          <% } %> <% if(user.mobile){ %>
+          <li>
+            <p>Mobile - <%= user.mobile %></p>
+          </li>
+          <% } %>
+          <li>
+            <p>Email - <%= user.email %></p>
+          </li>
+          <li>
+            <p>Joined - <%= user.date %></p>
+          </li>
+          <% } %>
+
+          <div class="dash-u-update-btn">
+            <span class="dash-u-delete"><a>Delete</a></span>
+            <span class="dash-u-update"><a href="#">Update</a></span>
+          </div>
+          <div class="confirm-delete">
+            <p>Confirm delete</p>
+            <span class="dash-u-delete-cancel"><a>Cancel</a></span>
+            <span class="dash-u-delete-confirm"
+              ><a onclick="deleteUser('<%= user._id %>')">Confirm</a></span
+            >
+          </div>
+        </ul>
+      </div>
+    </div>
+    <% } %> <% }) %> <% } %>
+  </div>
+</div>
+<script>
+  //remove-user logic
+  async function deleteUser(userId) {
+    let response = await fetch(`/deleteuser/${userId}`, {
+      method: "DELETE",
+    });
+    let result = await response.json();
+    if (result.errors) {
+      console.log(result.errors);
+    } else {
+      document.getElementById(`${userId}`).remove();
+      setTimeout(() => {
+        document.location.reload();
+      }, 1000);
+    }
+  }
+</script>

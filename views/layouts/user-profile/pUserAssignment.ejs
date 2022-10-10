@@ -1,0 +1,22 @@
+<div class="p-user-assignment">
+  <div class="assignments">
+    <p class="dash-sect-heading">Assignments</p>
+
+    <% if( studentData.role === "student") { %> <% let count = 1;
+    assignments.map((assignment)=>{ %>
+
+    <div class="assignment">
+      <p>
+        <span><%= count++ %>.</span>
+        <%= assignment.assignment %>
+      </p>
+      <p class="assignment-cat">
+        <span class="assignment-catagory">
+          Catagory: <%= assignment.program %>
+        </span>
+        <span class="assignment-date"> <%= assignment.date %> </span>
+      </p>
+    </div>
+    <% }) %> <% } %>
+  </div>
+</div>

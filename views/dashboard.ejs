@@ -1,0 +1,251 @@
+<%- include("./layouts/header.ejs"); %>
+<div class="inst-dashboard">
+  <div class="page-title">
+    <h2>Dashboard</h2>
+  </div>
+  <div class="container">
+    <div class="user-head">
+      <div class="row">
+        <div class="col-md-3 col-4">
+          <div class="user-avatar-upload">
+            <p>
+              Change profile picture
+              <span>
+                <i
+                  class="fa-solid fa-xmark"
+                  id="x-avatar"
+                  onclick="closeAvatarUploadBox()"
+                ></i>
+              </span>
+            </p>
+
+            <hr />
+            <div class="avatar-preview">
+              <img src="/uploads/avatar/user-icon.png" id="avatar-preview" />
+            </div>
+            <span class="image-ratio">Recommended (1080 x 1080)px</span>
+
+            <div class="avatar-form">
+              <form
+                action="/avatarupload"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <label for="avatar">+ Upload photo</label>
+                <input
+                  type="file"
+                  id="avatar"
+                  name="avatar"
+                  accept="image/*"
+                  onchange="avatarPreview(event);"
+                />
+                <hr />
+                <div class="avatar-upload-btn">
+                  <a href="#" onclick="closeAvatarUploadBox()">Cancel</a>
+                  <input type="submit" value="Save" />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="user-avatar">
+            <% if(admin.avatar) { %>
+            <img src="/uploads/avatar/<%= user.avatar %>" alt="" />
+            <% } else{ %>
+            <img src="/uploads/avatar/user-icon.png" alt="" />
+            <% } %>
+          </div>
+        </div>
+        <div class="col-md-9 col-8">
+          <div class="user-name">
+            <h3><%= admin.name %></h3>
+            <% if(admin.designation) { %>
+            <p><%= admin.designation %></p>
+            <% } else { %>
+            <p><%= admin.role %></p>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="profile-hr" />
+
+    <div class="dashboard">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="dashboard-menu">
+            <ul>
+              <li id="dashboard-all-users">All users</li>
+              <li id="dashboard-all-students">Students</li>
+              <li id="dashboard-all-instructors">Instructors</li>
+              <li id="dashboard-resource">Resources</li>
+              <li id="dashboard-assignment">Assignments</li>
+              <li id="dashboard-notice">Notice</li>
+              <li id="dashboard-program">Programs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="dashboard-sections">
+            <%- include("./layouts/dashboard/allUsers.ejs"); -%> <%-
+            include("./layouts/dashboard/allStudents.ejs"); -%> <%-
+            include("./layouts/dashboard/allinstructors.ejs"); -%> <%-
+            include("./layouts/dashboard/allResources.ejs"); -%> <%-
+            include("./layouts/dashboard/allAssignments.ejs"); -%> <%-
+            include("./layouts/dashboard/allNotices.ejs"); -%> <%-
+            include("./layouts/dashboard/allPrograms.ejs"); -%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  //dashboard
+  const dashAllUsers = document.querySelector("#dashboard-all-users");
+  const dashAllStudents = document.querySelector("#dashboard-all-students");
+  const dashAllInstructors = document.querySelector(
+    "#dashboard-all-instructors"
+  );
+  const dashAllResources = document.querySelector("#dashboard-resource");
+  const dashAssignments = document.querySelector("#dashboard-assignment");
+  const dashNotices = document.querySelector("#dashboard-notice");
+  const dashPrograms = document.querySelector("#dashboard-program");
+
+  //sections
+  const dashAllUsersSect = document.querySelector(".dashboard-allusers");
+  const dashAllStudentsSect = document.querySelector(".dashboard-allstudents");
+  const dashAllInstructorsSect = document.querySelector(
+    ".dashboard-allinstructors"
+  );
+  const dashAllResourcesSect = document.querySelector(
+    ".dashboard-allResources"
+  );
+  const dashAllAssignmentsSect = document.querySelector(
+    ".dashboard-allAssignments"
+  );
+  const dashAllNoticesSect = document.querySelector(".dashboard-allNotices");
+  const dashAllProgramSect = document.querySelector(".dashboard-allPrograms");
+
+  dashAllUsers.addEventListener("click", () => {
+    setTimeout(() => {
+      dashAllUsersSect.style.display = "block";
+      dashAllStudentsSect.style.display = "none";
+      dashAllInstructorsSect.style.display = "none";
+      dashAllResourcesSect.style.display = "none";
+      dashAllAssignmentsSect.style.display = "none";
+      dashAllNoticesSect.style.display = "none";
+      dashAllProgramSect.style.display = "none";
+    }, 1000);
+  });
+  dashAllStudents.addEventListener("click", () => {
+    setTimeout(() => {
+      dashAllUsersSect.style.display = "none";
+      dashAllStudentsSect.style.display = "block";
+      dashAllInstructorsSect.style.display = "none";
+      dashAllResourcesSect.style.display = "none";
+      dashAllAssignmentsSect.style.display = "none";
+      dashAllNoticesSect.style.display = "none";
+      dashAllProgramSect.style.display = "none";
+    }, 1000);
+  });
+  dashAllInstructors.addEventListener("click", () => {
+    setTimeout(() => {
+      dashAllUsersSect.style.display = "none";
+      dashAllStudentsSect.style.display = "none";
+      dashAllInstructorsSect.style.display = "block";
+      dashAllResourcesSect.style.display = "none";
+      dashAllAssignmentsSect.style.display = "none";
+      dashAllNoticesSect.style.display = "none";
+      dashAllProgramSect.style.display = "none";
+    }, 1000);
+  });
+  dashAllResources.addEventListener("click", () => {
+    setTimeout(() => {
+      dashAllUsersSect.style.display = "none";
+      dashAllStudentsSect.style.display = "none";
+      dashAllInstructorsSect.style.display = "none";
+      dashAllResourcesSect.style.display = "block";
+      dashAllAssignmentsSect.style.display = "none";
+      dashAllNoticesSect.style.display = "none";
+      dashAllProgramSect.style.display = "none";
+    }, 1000);
+  });
+  dashAssignments.addEventListener("click", () => {
+    setTimeout(() => {
+      dashAllUsersSect.style.display = "none";
+      dashAllStudentsSect.style.display = "none";
+      dashAllInstructorsSect.style.display = "none";
+      dashAllResourcesSect.style.display = "none";
+      dashAllAssignmentsSect.style.display = "block";
+      dashAllNoticesSect.style.display = "none";
+      dashAllProgramSect.style.display = "none";
+    }, 1000);
+  });
+  dashNotices.addEventListener("click", () => {
+    setTimeout(() => {
+      dashAllUsersSect.style.display = "none";
+      dashAllStudentsSect.style.display = "none";
+      dashAllInstructorsSect.style.display = "none";
+      dashAllResourcesSect.style.display = "none";
+      dashAllAssignmentsSect.style.display = "none";
+      dashAllNoticesSect.style.display = "block";
+      dashAllProgramSect.style.display = "none";
+    }, 1000);
+  });
+  dashPrograms.addEventListener("click", () => {
+    setTimeout(() => {
+      dashAllUsersSect.style.display = "none";
+      dashAllStudentsSect.style.display = "none";
+      dashAllInstructorsSect.style.display = "none";
+      dashAllResourcesSect.style.display = "none";
+      dashAllAssignmentsSect.style.display = "none";
+      dashAllNoticesSect.style.display = "none";
+      dashAllProgramSect.style.display = "block";
+    }, 1000);
+  });
+</script>
+
+<script>
+  // user list design
+  var deshUserInfo = document.querySelectorAll(".dash-user-info");
+  var deshUserDetails = document.querySelectorAll(".dash-user-details");
+  var rightArrow = document.querySelectorAll("#right-arrow");
+  var downArrow = document.querySelectorAll("#down-arrow");
+
+  for (let i = 0; i < deshUserInfo.length; i++) {
+    let count = 0;
+
+    deshUserInfo[i].addEventListener("click", function () {
+      deshUserDetails[i].style.display = "block";
+      rightArrow[i].style.display = "none";
+      downArrow[i].style.display = "block";
+      count++;
+
+      if (count % 2 == 0) {
+        deshUserDetails[i].style.display = "none";
+        rightArrow[i].style.display = "block";
+        downArrow[i].style.display = "none";
+      }
+    });
+  }
+
+  //remove user btn
+  const userDelete = document.querySelectorAll(".dash-u-delete");
+  const userDeleteConfirm = document.querySelectorAll(".confirm-delete");
+  const userDeleteCancelBtn = document.querySelectorAll(
+    ".dash-u-delete-cancel"
+  );
+
+  for (let i = 0; i < userDelete.length; i++) {
+    userDelete[i].addEventListener("click", () => {
+      userDeleteConfirm[i].style.display = "block";
+    });
+    userDeleteCancelBtn[i].addEventListener("click", () => {
+      userDeleteConfirm[i].style.display = "none";
+    });
+  }
+</script>
+
+<%- include("./layouts/footer.ejs"); %>

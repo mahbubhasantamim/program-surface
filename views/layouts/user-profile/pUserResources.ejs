@@ -1,0 +1,26 @@
+<div class="p-user-resource">
+  <div class="resources">
+    <p class="dash-sect-heading">Resources</p>
+
+    <% let count = 1; if( studentData.role === "student") { %> <%
+    resources.map((resource)=>{ %>
+    <div class="resource">
+      <h3><%= count++ %>. <%= resource.title %></h3>
+      <p><%= resource.desc %></p>
+
+      <p class="resource-type" style="background-color: #f3f3f3">
+        Type: <%= resource.type %>
+      </p>
+      <p class="resource-cat" style="background-color: #f3f3f3">
+        Catagory: <%= resource.sector %>
+      </p>
+
+      <br />
+      <a href="<%= resource.link %>" target="_blank">Resource link</a>
+      <hr />
+    </div>
+    <% }) %> <% } else { %>
+    <P>Please register</P>
+    <% } %>
+  </div>
+</div>

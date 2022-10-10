@@ -1,0 +1,31 @@
+<%- include("./layouts/header.ejs"); %>
+
+<div class="page-title">
+  <h2>Login</h2>
+</div>
+<main class="login-f">
+  <div class="container">
+    <div class="row">
+      <form action="/login" method="post" id="login-form">
+        <div class="login-avatar">
+          <img src="./img/user_icon.png" alt="" />
+        </div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" autofocus required />
+        <p></p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required />
+
+        <div class="submit-btn">
+          <input type="submit" value="Login" id="submit" />
+        </div>
+        <p style="margin-top: 15px"><a href="/signup">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+  <div class="main-bg">
+    <img src="./img/program surface logo.png" alt="" />
+  </div>
+</main>
+
+<%- include("./layouts/footer.ejs"); %>

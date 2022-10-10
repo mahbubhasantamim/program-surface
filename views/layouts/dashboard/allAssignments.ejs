@@ -1,0 +1,31 @@
+<div class="dashboard-allAssignments">
+  <div class="all-assignments">
+    <p class="dash-sect-heading">Assignments</p>
+
+    <form action="/addassignment" method="post" id="assignment-form">
+      <label for="batch">Batch:</label>
+      <select name="batch" id="batch" required>
+        <option value="" hidden>- Select</option>
+        <option value="1">01</option>
+      </select>
+
+      <label for="program">Program:</label>
+      <select name="program" id="program" required>
+        <option value="" hidden>- Select</option>
+        <% programs.map((program)=>{ %>
+        <option value="<%= program.programname %>">
+          <%= program.programname %>
+        </option>
+        <% }) %>
+      </select>
+      <label for="date">Date:</label>
+      <input type="date" name="date" />
+      <label for="assignment">Assignment:</label>
+      <textarea name="assignment" placeholder="Assignment details"></textarea>
+
+      <div class="submit-btn">
+        <input type="submit" value="Add Assignment" id="submit" />
+      </div>
+    </form>
+  </div>
+</div>

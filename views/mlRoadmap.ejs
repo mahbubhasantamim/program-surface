@@ -1,0 +1,109 @@
+<%- include("./layouts/header.ejs"); %>
+
+<div class="roadmaps">
+  <div class="roadmap-hero">
+    <div class="container">
+      <p class="roadmap-explain">
+        <span>Machine learning</span> is a discipline of artificial intelligence
+        (AI) that provides machines with the ability to automatically learn from
+        data and past experiences while identifying patterns to make predictions
+        with minimal human intervention. <br />
+        <br />
+        Machine learning methods enable computers to operate autonomously
+        without explicit programming. ML applications are fed with new data, and
+        they can independently learn, grow, develop, and adapt. Machine learning
+        derives insightful information from large volumes of data by leveraging
+        algorithms to identify patterns and learn in an iterative process. ML
+        algorithms use computation methods to learn directly from data instead
+        of relying on any predetermined equation that may serve as a model.
+      </p>
+    </div>
+  </div>
+  <div class="roadmap-typesof">
+    <div class="container">
+      <div class="rm-section-heading ml-section-heading">
+        <h2>Types of Machine learning</h2>
+        <p>
+          Machine learning algorithms can be trained in many ways, with each
+          method having its pros and cons. Based on these methods and ways of
+          learning, machine learning is broadly categorized into four main
+          types:
+        </p>
+        <div class="ml-types-thumb">
+          <img src="/img/type-of-ml.png" alt="" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="roadmap-items">
+            <div class="roadmap-items-content">
+              <h3>Supervised machine learning</h3>
+              <p>
+                This type of ML involves supervision, where machines are trained
+                on labeled datasets and enabled to predict outputs based on the
+                provided training. The labeled dataset specifies that some input
+                and output parameters are already mapped. Hence, the machine is
+                trained with the input and corresponding output. A device is
+                made to predict the outcome using the test dataset in subsequent
+                phases.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="roadmap-items">
+            <div class="roadmap-items-content">
+              <h3>Unsupervised machine learning</h3>
+              <p>
+                Unsupervised learning refers to a learning technique that’s
+                devoid of supervision. Here, the machine is trained using an
+                unlabeled dataset and is enabled to predict the output without
+                any supervision. An unsupervised learning algorithm aims to
+                group the unsorted dataset based on the input’s similarities,
+                differences, and patterns.
+                <br /><br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="roadmap-items">
+            <div class="roadmap-items-content">
+              <h3>Semi-supervised learning</h3>
+              <p>
+                Semi-supervised learning comprises characteristics of both
+                supervised and unsupervised machine learning. It uses the
+                combination of labeled and unlabeled datasets to train its
+                algorithms. Using both types of datasets, semi-supervised
+                learning overcomes the drawbacks of the options mentioned above.
+                <br /><br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="roadmap-items">
+            <div class="roadmap-items-content">
+              <h3>Reinforcement learning</h3>
+              <p>
+                Reinforcement learning is a feedback-based process. Here, the AI
+                component automatically takes stock of its surroundings by the
+                hit & trial method, takes action, learns from experiences, and
+                improves performance. The component is rewarded for each good
+                action and penalized for every wrong move. Thus, the
+                reinforcement learning component aims to maximize the rewards by
+                performing good actions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- machine learning roadmap -->
+  <%- include("./layouts/roadmaps/machineLearning.ejs"); %>
+</div>
+
+<%- include("./layouts/footer.ejs"); %>

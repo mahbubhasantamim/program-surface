@@ -1,0 +1,43 @@
+<div class="user-information">
+  <% if( studentData.role === "user") { %>
+  <ul>
+    <li>
+      <p>Username - <%= studentData.username %></p>
+    </li>
+    <li>
+      <p>Email - <%= studentData.email %></p>
+    </li>
+  </ul>
+  <% } else if( studentData.role === "student") { %>
+  <ul>
+    <li>
+      <p>Username - <%= studentData.username %></p>
+    </li>
+
+    <li>
+      <p>Batch - <%= studentData.student.batch %></p>
+    </li>
+    <li>
+      <p>Student Id - <%= studentData.student.sId %></p>
+    </li>
+    <li>
+      <p>Department - <%= studentData.student.department %></p>
+    </li>
+    <li>
+      <p>Semester - <%= studentData.student.semester %></p>
+    </li>
+    <li>
+      <p>Session - <%= studentData.student.session %></p>
+    </li>
+    <li>
+      <p>Gender - <%= studentData.student.gender %></p>
+    </li>
+    <li>
+      <p>Mobile - +880<%= studentData.student.mobile %></p>
+    </li>
+    <li>
+      <p>Email - <%= studentData.email %></p>
+    </li>
+  </ul>
+  <% } %>
+</div>

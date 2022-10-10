@@ -1,0 +1,226 @@
+<%- include("./layouts/header.ejs"); %>
+
+<div class="profile-page">
+  <% if(studentData.role === "student") { %> <% if(studentsNotices) { %>
+  <marquee class="notice"> <%= studentsNotices.notice %> </marquee>
+  <% } %> <% if(notices) { %>
+  <marquee class="notice"> <%= notices.notice %> </marquee>
+  <% } %> <% } %>
+
+  <div class="page-title">
+    <h2>My profile</h2>
+  </div>
+  <div class="container">
+    <div class="user-head">
+      <div class="row">
+        <div class="col-md-3 col-4">
+          <div class="user-avatar-upload">
+            <p>
+              Change profile picture
+              <span>
+                <i
+                  class="fa-solid fa-xmark"
+                  id="x-avatar"
+                  onclick="closeAvatarUploadBox()"
+                ></i>
+              </span>
+            </p>
+
+            <hr />
+            <div class="avatar-preview">
+              <% if(studentData.avatar) { %>
+              <img
+                src="/uploads/avatar/<%= studentData.avatar %>"
+                id="avatar-preview"
+              />
+              <% } else { %>
+              <img src="/uploads/avatar/user-icon.png" id="avatar-preview" />
+              <% } %>
+            </div>
+            <span class="image-ratio">Recommended (1080 x 1080)px</span>
+
+            <div class="avatar-form">
+              <form
+                action="/avatarupload"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <label for="avatar">+ Upload photo</label>
+                <input
+                  type="file"
+                  id="avatar"
+                  name="avatar"
+                  accept="image/*"
+                  onchange="avatarPreview(event);"
+                />
+                <hr />
+                <div class="avatar-upload-btn">
+                  <a href="#" onclick="closeAvatarUploadBox()">Cancel</a>
+                  <input type="submit" value="Save" />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="user-avatar">
+            <% if(studentData.avatar) { %>
+            <img
+              src="/uploads/avatar/<%= studentData.avatar %>"
+              alt=""
+              id="user-avatar"
+            />
+            <% } else{ %>
+            <img src="/uploads/avatar/user-icon.png" alt="" id="user-avatar" />
+            <% } %>
+          </div>
+        </div>
+        <div class="col-md-9 col-8">
+          <div class="user-name">
+            <h3><%= studentData.name %></h3>
+            <% if( studentData.role === "student") { %>
+            <p>Program - <%= studentData.program %></p>
+            <% } else if (studentData.role === "user"){ %>
+            <p><%= studentData.role %></p>
+            <% } %>
+          </div>
+          <div class="profile-edit">
+            <p>
+              <a href="#"
+                ><i class="fa-solid fa-pen"></i><span> Edit profile</span></a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="profile-hr" />
+
+    <div class="user-details">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="profile-menu">
+            <ul>
+              <li id="pu-info">User info</li>
+              <li id="pu-roadmap">Roadmap</li>
+              <li id="pu-resources">Resources</li>
+              <li id="pu-assignment">Assignments</li>
+
+              <% if( studentData.role === "student") { %>
+              <li id="pu-batchmate">Batchmate</li>
+              <% } %>
+
+              <li id="pu-others">Others</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="user-info-sections">
+            <%- include("./layouts/user-profile/pUserInfo.ejs"); %> <%-
+            include("./layouts/user-profile/pUserResources.ejs"); %> <%-
+            include("./layouts/user-profile/pUserAssignment.ejs"); %> <%-
+            include("./layouts/user-profile/pUserBatchmate.ejs"); %> <%-
+            include("./layouts/user-profile/pUserAssignment.ejs"); %>
+            <div
+              class="user-info-roadmap"
+              style="display: none; background-color: azure"
+            >
+              <% if(studentData.program === "Web development") { %> <%-
+              include("./layouts/roadmaps/webDevelopment.ejs"); %> <% } else if
+              (studentData.program === "Machine learning") { %> <%-
+              include("./layouts/roadmaps/machineLearning.ejs"); %> <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // When the user clicks on avatar, open the popup
+  // const avatarUpload = document.querySelector(".user-avatar-upload");
+  // const activeAvatar = document.querySelector("#user-avatar");
+  // activeAvatar.addEventListener("click", () => {
+  //   setTimeout(() => {
+  //     avatarUpload.style.display = "block";
+  //   }, 1000);
+  // });
+
+  //avatar preview
+  function avatarPreview(event) {
+    if (event.target.files.length > 0) {
+      let src = URL.createObjectURL(event.target.files[0]);
+      let preview = document.getElementById("avatar-preview");
+      preview.src = src;
+      preview.style.display = "block";
+    }
+  }
+
+  //close avatar upload box
+  const closeAvatarUploadBox = () => {
+    const closeIcon = document.getElementById("x-avatar");
+    avatarUpload.style.display = "none";
+  };
+
+  //profile page
+  const puInfo = document.querySelector("#pu-info");
+  const puRoadmap = document.querySelector("#pu-roadmap");
+  const puResources = document.querySelector("#pu-resources");
+  const puAssignment = document.querySelector("#pu-assignment");
+  const puBatchmate = document.querySelector("#pu-batchmate");
+
+  //sections
+  const puInfoSect = document.querySelector(".user-information");
+  const puRoadmapSect = document.querySelector(".user-info-roadmap");
+  const puResourceSect = document.querySelector(".p-user-resource");
+  const puAssignmentSect = document.querySelector(".p-user-assignment");
+  const puBatchSect = document.querySelector(".p-user-batchmate");
+
+  puInfo.addEventListener("click", () => {
+    setTimeout(() => {
+      puInfoSect.style.display = "block";
+      puRoadmapSect.style.display = "none";
+      puResourceSect.style.display = "none";
+      puAssignmentSect.style.display = "none";
+      puBatchSect.style.display = "none";
+    }, 1000);
+  });
+
+  puRoadmap.addEventListener("click", () => {
+    setTimeout(() => {
+      puInfoSect.style.display = "none";
+      puRoadmapSect.style.display = "block";
+      puResourceSect.style.display = "none";
+      puAssignmentSect.style.display = "none";
+      puBatchSect.style.display = "none";
+    }, 1000);
+  });
+  puResources.addEventListener("click", () => {
+    setTimeout(() => {
+      puInfoSect.style.display = "none";
+      puRoadmapSect.style.display = "none";
+      puResourceSect.style.display = "block";
+      puAssignmentSect.style.display = "none";
+      puBatchSect.style.display = "none";
+    }, 1000);
+  });
+  puAssignment.addEventListener("click", () => {
+    setTimeout(() => {
+      puInfoSect.style.display = "none";
+      puRoadmapSect.style.display = "none";
+      puResourceSect.style.display = "none";
+      puAssignmentSect.style.display = "block";
+      puBatchSect.style.display = "none";
+    }, 1000);
+  });
+  puBatchmate.addEventListener("click", () => {
+    setTimeout(() => {
+      puInfoSect.style.display = "none";
+      puRoadmapSect.style.display = "none";
+      puResourceSect.style.display = "none";
+      puAssignmentSect.style.display = "none";
+      puBatchSect.style.display = "block";
+    }, 1000);
+  });
+</script>
+<%- include("./layouts/footer.ejs"); %>

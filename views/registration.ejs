@@ -131,9 +131,10 @@
 <script>
   //registration form
   const form = document.querySelector("#reg-form");
+  const submitBtn = document.querySelector("#submit");
 
   form.addEventListener("submit", () => {
-    form.querySelector("#submit").disabled = true;
+    submitBtn.disabled = true;
   });
 </script>
 <% } %> <%- include("./layouts/footer.ejs"); %>

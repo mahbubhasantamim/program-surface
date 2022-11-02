@@ -7,7 +7,7 @@
 <main>
   <div class="container">
     <div class="row">
-      <form action="/registration" method="post">
+      <form action="/registration" method="post" id="reg-form">
         <div class="batch-f f-item">
           <label for="batch">Batch:</label>
           <input type="number" name="batch" id="batch" value="001" readonly />
@@ -128,4 +128,12 @@
     <a href="/u/<%= loggedInUser.username %>">See your account</a>
   </div>
 </main>
+<script>
+  //registration form
+  const form = document.querySelector("#reg-form");
+
+  form.addEventListener("submit", () => {
+    form.querySelector("#submit").disabled = true;
+  });
+</script>
 <% } %> <%- include("./layouts/footer.ejs"); %>

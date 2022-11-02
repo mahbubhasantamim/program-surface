@@ -133,7 +133,8 @@
   const form = document.querySelector("#reg-form");
   const name = form.querySelector("#sId");
 
-  form.addEventListener("submit", () => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
     name.value = "";
   });
 </script>

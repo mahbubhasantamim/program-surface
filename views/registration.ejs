@@ -7,7 +7,12 @@
 <main>
   <div class="container">
     <div class="row">
-      <form action="/registration" method="post" id="reg-form">
+      <form
+        action="/registration"
+        method="post"
+        id="reg-form"
+        onSubmit="document.getElementById('submit').disabled=true;"
+      >
         <div class="batch-f f-item">
           <label for="batch">Batch:</label>
           <input type="number" name="batch" id="batch" value="001" readonly />
@@ -128,13 +133,4 @@
     <a href="/u/<%= loggedInUser.username %>">See your account</a>
   </div>
 </main>
-<script>
-  //registration form
-  const form = document.querySelector("#reg-form");
-  const submitBtn = document.querySelector("#submit");
-
-  form.addEventListener("submit", () => {
-    submitBtn.disabled = true;
-  });
-</script>
 <% } %> <%- include("./layouts/footer.ejs"); %>

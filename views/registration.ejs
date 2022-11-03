@@ -134,7 +134,7 @@
   const submitBtn = document.querySelector("#submit");
 
   form.addEventListener("submit", () => {
-    submitBtn.disabled = true;
+    submitBtn.style.display = "none";
   });
 </script>
 <% } %> <%- include("./layouts/footer.ejs"); %>

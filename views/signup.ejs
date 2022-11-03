@@ -72,4 +72,12 @@
       .split("%")
       .join("");
   }
+
+  //signup form double click problem
+  const form = document.querySelector("#signup-form");
+  const submitBtn = document.querySelector("#submit");
+
+  form.addEventListener("submit", () => {
+    submitBtn.disabled = true;
+  });
 </script>

@@ -177,6 +177,9 @@ p.form-nb {
   border: none;
   color: #f3f3f3;
 }
+.submit-btn input:hover {
+  background-color: #0b6e0e;
+}
 footer {
   padding: 80px 0px 50px 0px;
   background-color: #262a2e;
